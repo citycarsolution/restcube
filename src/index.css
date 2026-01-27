@@ -2,10 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-/* global safe defaults */
-html, body, #root {
+/* ================= GLOBAL SAFE DEFAULTS ================= */
+html,
+body,
+#root {
   min-height: 100%;
 }
+
+/* ================= DYNAMIC HEADER SYSTEM ================= */
+
+/* Desktop header height */
+:root {
+  --header-height: 64px;
+}
+
+/* Mobile header height */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 56px;
+  }
+}
+
+/* Smooth scroll everywhere */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Anchor offset fix (header ke niche rukega) */
+.scroll-offset {
+  scroll-margin-top: var(--header-height);
+}
+
+/* ================= MARQUEE ANIMATION ================= */
 @keyframes marquee {
   0% {
     transform: translateX(0);

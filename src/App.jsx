@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import RestCubeHeader from "./components/RestCubeHeader";
 import Footer from "./components/Footer";
 
-// 🏠 HOME SECTIONS
+/* ================= HOME SECTIONS ================= */
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
 import ProductsSection from "./components/ProductsSection";
@@ -14,12 +14,15 @@ import CustomersSection from "./components/CustomersSection";
 import BlogSection from "./components/BlogSection";
 import ContactSection from "./components/ContactSection";
 
-// 📄 STATIC PAGES
+/* ================= STATIC PAGES ================= */
 import AboutPage from "./pages/AboutPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 
-// 📄 PRODUCT PAGES
+/* ================= SINGLE PRODUCT CATEGORY PAGE ================= */
+import ProductCategoryPage from "./pages/ProductCategoryPage";
+
+/* ================= PRODUCT DETAIL PAGES ================= */
 import StainlessSteelToiletCubicle from "./pages/StainlessSteelToiletCubicle";
 import PureSSCubicle from "./pages/PureSSCubicle";
 import ShoeBoxToiletCubicle from "./pages/ShoeBoxToiletCubicle";
@@ -30,17 +33,15 @@ import ChangingRoomCubicle from "./pages/ChangingRoomCubicle";
 import PDDoorCubicle from "./pages/PDDoorCubicle";
 import KidsToiletCubicle from "./pages/KidsToiletCubicle";
 
-// 🚀 SEO AUTO PAGE
+/* ================= SEO CITY × PRODUCT ================= */
 import CityProductPage from "./pages/CityProductPage";
 
 export default function App() {
   return (
     <>
-      {/* HEADER */}
       <RestCubeHeader />
 
-      {/* MAIN CONTENT */}
-      <main className="min-h-screen pb-16">
+      <main className="min-h-screen pt-16">
         <Routes>
 
           {/* HOME */}
@@ -62,14 +63,15 @@ export default function App() {
             }
           />
 
-          {/* ABOUT */}
+          {/* STATIC */}
           <Route path="/about" element={<AboutPage />} />
-
-          {/* COMPANY WORK */}
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
 
-          {/* PRODUCT PAGES */}
+          {/* ✅ SINGLE PRODUCT CATEGORY PAGE */}
+          <Route path="/products/:category" element={<ProductCategoryPage />} />
+
+          {/* PRODUCT DETAIL PAGES */}
           <Route path="/stainless-steel-toilet-cubicle" element={<StainlessSteelToiletCubicle />} />
           <Route path="/pure-ss-cubicle" element={<PureSSCubicle />} />
           <Route path="/shoe-box-toilet-cubicle" element={<ShoeBoxToiletCubicle />} />
@@ -86,7 +88,6 @@ export default function App() {
         </Routes>
       </main>
 
-      {/* FOOTER */}
       <Footer />
     </>
   );
