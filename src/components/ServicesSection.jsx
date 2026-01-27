@@ -1,5 +1,5 @@
-import serviceImg1 from "../assets/services/toilet-cubicle-installation.WEBP";
-import serviceImg2 from "../assets/services/urinal-partition-system.WEBP";
+import serviceImg1 from "../assets/services/toilet-cubicle-installation.webp";
+import serviceImg2 from "../assets/services/urinal-partition-system.webp";
 
 export default function ServicesSection() {
   return (
@@ -9,7 +9,7 @@ export default function ServicesSection() {
         {/* SECTION TITLE */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-extrabold">
-          Urinal <span className="text-red-600">Partition</span>
+            Urinal <span className="text-red-600">Partition</span>
           </h2>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
             Complete restroom cubicle solutions – from design consultation to
@@ -19,8 +19,6 @@ export default function ServicesSection() {
 
         {/* SERVICE 1 */}
         <div className="grid lg:grid-cols-2 gap-14 items-center mb-24">
-
-          {/* IMAGE BOX */}
           <div className="rounded-2xl overflow-hidden shadow-xl h-[360px]">
             <img
               src={serviceImg1}
@@ -29,7 +27,6 @@ export default function ServicesSection() {
             />
           </div>
 
-          {/* CONTENT */}
           <div>
             <h3 className="text-2xl font-bold mb-4">
               Toilet Cubicle Installation
@@ -56,8 +53,6 @@ export default function ServicesSection() {
 
         {/* SERVICE 2 */}
         <div className="grid lg:grid-cols-2 gap-14 items-center">
-
-          {/* CONTENT */}
           <div className="order-2 lg:order-1">
             <h3 className="text-2xl font-bold mb-4">
               Urinal Partition Systems
@@ -81,7 +76,6 @@ export default function ServicesSection() {
             </button>
           </div>
 
-          {/* IMAGE BOX */}
           <div className="rounded-2xl overflow-hidden shadow-xl h-[360px] order-1 lg:order-2">
             <img
               src={serviceImg2}
