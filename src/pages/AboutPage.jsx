@@ -2,6 +2,10 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
+/* ✅ WARRANTY IMAGES FROM src/assets */
+import warranty10 from "../assets/about/warranty-10-year.webp";
+import warranty1 from "../assets/about/warranty-1-year.webp";
+
 export default function AboutPage() {
   const [count, setCount] = useState({
     years: 0,
@@ -20,7 +24,6 @@ export default function AboutPage() {
     return () => clearInterval(i);
   }, []);
 
-  /* SEO */
   useEffect(() => {
     document.title =
       "About RestCube | Toilet Cubicle Manufacturer in Mumbai, Pune, Delhi";
@@ -37,8 +40,6 @@ export default function AboutPage() {
 
       {/* ABOUT HERO */}
       <section className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-14 items-center">
-        
-        {/* ✅ IMAGE FROM PUBLIC FOLDER */}
         <motion.img
           src="/about/about-main.jpeg"
           alt="RestCube Toilet Cubicle Manufacturer"
@@ -61,10 +62,7 @@ export default function AboutPage() {
 
           <p className="text-gray-700 leading-relaxed">
             Our business and reputation are built on quality design,
-            manufacturing excellence and customer satisfaction. We work
-            closely with architects and designers to create toilet and
-            shower cubicles that function beautifully and deliver
-            lasting elegance.
+            manufacturing excellence and customer satisfaction.
           </p>
 
           <p className="mt-4 text-gray-700">
@@ -93,11 +91,11 @@ export default function AboutPage() {
 
         <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-10">
           <Warranty
-            img="/about/warranty-10-year.webp"
+            img={warranty10}
             text="10 Year Warranty on Compact Board (HPL)"
           />
           <Warranty
-            img="/about/warranty-1-year.webp"
+            img={warranty1}
             text="1 Year Warranty on Hardware’s and Sections"
           />
         </div>
