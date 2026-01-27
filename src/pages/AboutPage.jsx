@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 export default function AboutPage() {
-  /* COUNTERS */
   const [count, setCount] = useState({
     years: 0,
     projects: 0,
@@ -21,7 +20,7 @@ export default function AboutPage() {
     return () => clearInterval(i);
   }, []);
 
-  /* SEO + SCHEMA */
+  /* SEO */
   useEffect(() => {
     document.title =
       "About RestCube | Toilet Cubicle Manufacturer in Mumbai, Pune, Delhi";
@@ -31,25 +30,6 @@ export default function AboutPage() {
     meta.content =
       "RestCube is a leading toilet cubicle manufacturer in Mumbai, Pune, Delhi, Bangalore, Chennai, Hyderabad & Ahmedabad.";
     document.head.appendChild(meta);
-
-    const schema = document.createElement("script");
-    schema.type = "application/ld+json";
-    schema.innerHTML = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      name: "RestCube",
-      url: "https://www.restcube.in",
-      areaServed: [
-        "Mumbai",
-        "Pune",
-        "Delhi",
-        "Bangalore",
-        "Chennai",
-        "Hyderabad",
-        "Ahmedabad",
-      ],
-    });
-    document.head.appendChild(schema);
   }, []);
 
   return (
@@ -57,19 +37,23 @@ export default function AboutPage() {
 
       {/* ABOUT HERO */}
       <section className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-14 items-center">
+        
+        {/* ✅ IMAGE FROM PUBLIC FOLDER */}
         <motion.img
-          src="/about/about-main.jpg"
-          loading="lazy"
+          src="/about/about-main.jpeg"
           alt="RestCube Toilet Cubicle Manufacturer"
-          className="rounded-2xl shadow-2xl"
+          loading="lazy"
+          className="rounded-2xl shadow-2xl w-full"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
         />
 
         <motion.div
-          className="bg-white/70 backdrop-blur-xl p-10 rounded-2xl shadow-xl"
+          className="bg-white/80 backdrop-blur-xl p-10 rounded-2xl shadow-xl"
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
         >
           <h1 className="text-4xl font-extrabold mb-5">
             RESTCUBE CUBICLE
@@ -90,60 +74,6 @@ export default function AboutPage() {
             Solutions.
           </p>
         </motion.div>
-      </section>
-
-      {/* WHY CHOOSE US */}
-      <section className="bg-white py-24">
-        <h2 className="text-4xl font-bold text-center mb-6">
-          WHY CHOOSE US…
-        </h2>
-        <p className="text-center text-gray-600 mb-16">
-          Apart from beautiful results, there are many reasons to choose us.
-        </p>
-
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
-          <Why title="High performance">
-            In detailing and engineering of all Toilet Cubicle Partitions,
-            we ensure high quality visually and technically.
-          </Why>
-
-          <Why title="Cost effective">
-            Competitive pricing in restroom partitions, shower cubicles and
-            urinal partitions.
-          </Why>
-
-          <Why title="Professional service">
-            Working closely with engineers, architects and restroom experts.
-          </Why>
-        </div>
-      </section>
-
-      {/* MARKET LEADER */}
-      <section className="bg-[#f4f4f4] py-24">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
-          <div>
-            <h3 className="text-3xl font-bold mb-4">
-              Market Leader in Toilet Partitions
-            </h3>
-            <p className="text-gray-700 leading-relaxed">
-              Over the years, RestCube has developed advanced HPL-based
-              products including lockers, bathroom partitions, shower
-              cubicles, benches and dressing compartments that outperform
-              traditional materials.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-3xl font-bold mb-4">
-              Expert Installers
-            </h3>
-            <p className="text-gray-700 leading-relaxed">
-              Toilet partitions require expert installers to ensure sleek
-              finish and long life. RestCube provides experienced teams,
-              safety protocols and insured installation services.
-            </p>
-          </div>
-        </div>
       </section>
 
       {/* COUNTERS */}
@@ -178,15 +108,12 @@ export default function AboutPage() {
         <p className="font-semibold mb-4">Serving Across India</p>
         <div className="flex flex-wrap justify-center gap-4 text-red-600 font-medium">
           <Link to="/toilet-cubicle-mumbai">Mumbai</Link>
-          <Link to="/toilet-cubicle-thane">Thane</Link>
-          <Link to="/toilet-cubicle-nashik">Nashik</Link>
           <Link to="/toilet-cubicle-pune">Pune</Link>
-          <Link to="/toilet-cubicle-nagpur">Nagpur</Link>
           <Link to="/toilet-cubicle-bangalore">Bangalore</Link>
           <Link to="/toilet-cubicle-hyderabad">Hyderabad</Link>
-          
         </div>
       </section>
+
     </main>
   );
 }
@@ -197,13 +124,6 @@ const Counter = ({ value, label }) => (
   <div>
     <h3 className="text-5xl font-extrabold text-red-500">{value}+</h3>
     <p className="mt-2 text-gray-300">{label}</p>
-  </div>
-);
-
-const Why = ({ title, children }) => (
-  <div className="bg-white p-8 rounded-xl shadow hover:shadow-xl transition">
-    <h4 className="font-bold text-xl mb-3">{title}</h4>
-    <p className="text-gray-600">{children}</p>
   </div>
 );
 
