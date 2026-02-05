@@ -19,7 +19,7 @@ import AboutPage from "./pages/AboutPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 
-/* ================= SINGLE PRODUCT CATEGORY PAGE ================= */
+/* ================= PRODUCT CATEGORY ================= */
 import ProductCategoryPage from "./pages/ProductCategoryPage";
 
 /* ================= PRODUCT DETAIL PAGES ================= */
@@ -33,6 +33,12 @@ import ChangingRoomCubicle from "./pages/ChangingRoomCubicle";
 import PDDoorCubicle from "./pages/PDDoorCubicle";
 import KidsToiletCubicle from "./pages/KidsToiletCubicle";
 
+/* ================= SERVICE DETAIL ================= */
+import ToiletCubicleInstallation from "./pages/ToiletCubicleInstallation";
+
+/* ================= URINAL PARTITION OVERVIEW (FINAL) ================= */
+import UrinalPartitionOverview from "./pages/UrinalPartitionOverview";
+
 /* ================= SEO CITY × PRODUCT ================= */
 import CityProductPage from "./pages/CityProductPage";
 
@@ -44,7 +50,7 @@ export default function App() {
       <main className="min-h-screen pt-16">
         <Routes>
 
-          {/* HOME */}
+          {/* ================= HOME ================= */}
           <Route
             path="/"
             element={
@@ -63,15 +69,18 @@ export default function App() {
             }
           />
 
-          {/* STATIC */}
+          {/* ================= STATIC ================= */}
           <Route path="/about" element={<AboutPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
 
-          {/* ✅ SINGLE PRODUCT CATEGORY PAGE */}
-          <Route path="/products/:category" element={<ProductCategoryPage />} />
+          {/* ================= PRODUCT CATEGORY ================= */}
+          <Route
+            path="/products/:category"
+            element={<ProductCategoryPage />}
+          />
 
-          {/* PRODUCT DETAIL PAGES */}
+          {/* ================= PRODUCT DETAILS ================= */}
           <Route path="/stainless-steel-toilet-cubicle" element={<StainlessSteelToiletCubicle />} />
           <Route path="/pure-ss-cubicle" element={<PureSSCubicle />} />
           <Route path="/shoe-box-toilet-cubicle" element={<ShoeBoxToiletCubicle />} />
@@ -82,8 +91,23 @@ export default function App() {
           <Route path="/pd-door-cubicle" element={<PDDoorCubicle />} />
           <Route path="/kids-toilet-cubicle" element={<KidsToiletCubicle />} />
 
-          {/* CITY × PRODUCT SEO */}
-          <Route path="/:productSlug-:citySlug" element={<CityProductPage />} />
+          {/* ================= SERVICE PAGES ================= */}
+          <Route
+            path="/services/toilet-cubicle-installation"
+            element={<ToiletCubicleInstallation />}
+          />
+
+          {/* 🔥 IMPORTANT: URINAL PARTITION OVERVIEW */}
+          <Route
+            path="/services/urinal-partition-systems"
+            element={<UrinalPartitionOverview />}
+          />
+
+          {/* ================= CITY × PRODUCT SEO ================= */}
+          <Route
+            path="/:productSlug-:citySlug"
+            element={<CityProductPage />}
+          />
 
         </Routes>
       </main>

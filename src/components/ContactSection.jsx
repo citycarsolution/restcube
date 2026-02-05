@@ -127,13 +127,17 @@ Requirement: ${form.message}`;
             onChange={handleChange}
             className="w-full p-3 rounded bg-black/40 text-white outline-none border border-white/10"
           >
-            <option>Mumbai</option>
-            <option>Thane</option>
-            <option>Pune</option>
-            <option>Bangalore</option>
-            <option>Delhi</option>
-            <option>Hyderabad</option>
-            <option>Nashik</option>
+           <option>Mumbai</option>
+                  <option>Thane</option>
+                  <option>Pune</option>
+                  <option>Bangalore</option>
+                  <option>Navi Mumbai</option>
+                  <option>Hyderabad</option>
+                  <option>Nashik</option>
+                  <option>Ahmedabad</option>
+                  <option>Surat</option>
+                  <option>Vadodra</option>
+                  <option>Rajkot</option>
           </select>
 
           <textarea

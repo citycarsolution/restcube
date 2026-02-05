@@ -113,9 +113,13 @@ export default function HeroSection() {
                   <option>Thane</option>
                   <option>Pune</option>
                   <option>Bangalore</option>
-                  <option>Delhi</option>
+                  <option>Navi Mumbai</option>
                   <option>Hyderabad</option>
                   <option>Nashik</option>
+                  <option>Ahmedabad</option>
+                  <option>Surat</option>
+                  <option>Vadodra</option>
+                  <option>Rajkot</option>
                 </select>
 
                 <button
